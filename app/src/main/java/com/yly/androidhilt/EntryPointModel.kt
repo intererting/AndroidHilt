@@ -1,3 +1,9 @@
 package com.yly.androidhilt
 
-data class EntryPointModel(var value: String)
+import javax.inject.Inject
+
+data class EntryPointModel(var value: String) {
+
+    @Inject
+    constructor() : this("entrypoint model")
+}

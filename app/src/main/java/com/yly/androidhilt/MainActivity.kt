@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.EntryPointAccessors
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -46,5 +47,12 @@ class MainActivity : AppCompatActivity() {
         println("myViewModel.people   ${myViewModel.people.name}")
 
         println("singleTonValue   ${singleTonValue.value}")
+
+        //测试自定义EntryPoint
+        val entryPointModel =
+            EntryPointAccessors.fromApplication(applicationContext, EntryPointInterface::class.java)
+                .getEntryPoint()
+
+        println("entryPointModel.value   ${entryPointModel.value}")
     }
 }
