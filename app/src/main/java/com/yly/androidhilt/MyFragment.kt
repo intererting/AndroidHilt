@@ -14,8 +14,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MyFragment : Fragment() {
 
-    @Inject
-    lateinit var people: People
+//    @Inject
+//    @BoyQualifier
+//    lateinit var people: People
 
     @Inject
     lateinit var scopedPerson: ScopedPerson
@@ -33,8 +34,7 @@ class MyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        test.text = people.name
-        println(scopedPerson.hashCode())
+//        test.text = people.name
         println("scopedPerson === scopedPersonB   ${scopedPerson === scopedPersonB}")
     }
 

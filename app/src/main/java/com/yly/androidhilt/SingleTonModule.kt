@@ -20,7 +20,7 @@ object SingleTonModule {
      *
      *
     Component	Default Bindings
-    ApplicationComponent	Application2
+    ApplicationComponent	Application
     ActivityRetainedComponent	Application
     ActivityComponent	Application, Activity
     FragmentComponent	Application, Activity, Fragment

@@ -7,7 +7,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 import javax.inject.Inject
 
-
 //@WithFragmentBindings
 //@AndroidEntryPoint
 //class MyView(context: Context?, attributeSet: AttributeSet?) :

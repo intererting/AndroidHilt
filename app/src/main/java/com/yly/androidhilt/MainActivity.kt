@@ -1,5 +1,6 @@
 package com.yly.androidhilt
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,11 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var peopleB: People
 
+    //带标示符的注入
+//    @Inject
+//    @BoyQualifier
+//    internal lateinit var boyPeople: People
+
     @Inject
     lateinit var singleTonValue: SingleTonValue
 
@@ -28,12 +34,31 @@ class MainActivity : AppCompatActivity() {
 
     private val myViewModel by viewModels<MyViewModel>()
 
+    private val viewmodelComponentViewModel by viewModels<MyViewModelComponentViewModel>()
+
+//    @Inject
+//    lateinit var viewModelPeople: ViewModelPeople
+
+    @Inject
+    internal lateinit var myInterface: MyInterface
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        test.text = people.name
 
+        startSecond.setOnClickListener {
+            startActivity(Intent(this, SecondActivity::class.java))
+        }
+//        test.text = people.name
+
+//        println(boyPeople.name)
+
+        //测试接口注入
+        myInterface.testInterfaceBinds()
+
+        //默认不是单例
+//        println(people)
         println("people === peopleB   ${people === peopleB}")
 
         supportFragmentManager.beginTransaction()
@@ -44,7 +69,9 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_container_b, MyFragment())
             .commit()
 
-        println("myViewModel.people   ${myViewModel.people.name}")
+        println("viewmodelComponentViewModel  ${viewmodelComponentViewModel.viewModelPeople.name}")
+
+//        println("myViewModel.people   ${myViewModel.people.name}")
 
         println("singleTonValue   ${singleTonValue.value}")
 
@@ -54,5 +81,10 @@ class MainActivity : AppCompatActivity() {
                 .getEntryPoint()
 
         println("entryPointModel.value   ${entryPointModel.value}")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("onDestroy")
     }
 }

@@ -2,9 +2,9 @@ package com.yly.androidhilt
 
 import javax.inject.Inject
 
-data class People(var name: String) {
+class People(var name: String) {
 
-    @Inject
+    //    @Inject
     constructor() : this("haha") {
 
     }

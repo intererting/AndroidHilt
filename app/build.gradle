@@ -5,13 +5,12 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.yly.androidhilt"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -48,9 +47,9 @@ dependencies {
     implementation 'com.google.dagger:hilt-android:+'
     kapt 'com.google.dagger:hilt-android-compiler:+'
 
-    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:+'
     // When using Kotlin.
-    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha01'
+    kapt 'androidx.hilt:hilt-compiler:+'
 
     implementation "androidx.fragment:fragment-ktx:1.2.5"
     implementation "androidx.activity:activity-ktx:1.1.0"

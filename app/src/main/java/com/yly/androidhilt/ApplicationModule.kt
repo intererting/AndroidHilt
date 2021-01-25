@@ -4,9 +4,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 
 /*ApplicationComponent	Application
 ActivityRetainedComponent	ViewModel (see View model extension)
+ViewModelComponent ViewModel
 ActivityComponent	Activity
 FragmentComponent	Fragment
 ViewComponent	View
@@ -27,7 +29,7 @@ ServiceComponent	@ServiceScoped	Service#onCreate()	Service#onDestroy()
 
 
 //@Module
-//@InstallIn(ApplicationComponent::class) // Installs FooModule in the generate ApplicationComponent.
+//@InstallIn(SingletonComponent::class) // Installs FooModule in the generate ApplicationComponent.
 //object ApplicationModule {
 //
 //    @Provides
