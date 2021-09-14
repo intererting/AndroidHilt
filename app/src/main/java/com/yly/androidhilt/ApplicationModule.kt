@@ -1,11 +1,5 @@
 package com.yly.androidhilt
 
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
-import dagger.hilt.components.SingletonComponent
-
 /*ApplicationComponent	Application
 ActivityRetainedComponent	ViewModel (see View model extension)
 ViewModelComponent ViewModel

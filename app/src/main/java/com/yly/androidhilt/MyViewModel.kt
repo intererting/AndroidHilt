@@ -1,22 +1,21 @@
 package com.yly.androidhilt
 
 import android.content.Context
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.assisted.Assisted
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
 //people将自动注入
-class MyViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MyViewModel @Inject constructor(
 //    @ActivityContext context: Context, //系统自带的两个Qualifier
     @ApplicationContext context: Context,
 //    @BoyQualifier val people: People,
     //在ViewModel和WorkManager中使用，通过工厂方法注入对象
-    @Assisted
+//    @Assisted
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -26,7 +25,8 @@ class MyViewModel @ViewModelInject constructor(
 
 }
 
-class MyViewModelComponentViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MyViewModelComponentViewModel @Inject constructor(
     var viewModelPeople: ViewModelPeople,
 ) : ViewModel() {
 
