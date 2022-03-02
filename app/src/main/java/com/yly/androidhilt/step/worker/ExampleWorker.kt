@@ -5,6 +5,8 @@ import androidx.annotation.NonNull
 import androidx.hilt.work.HiltWorker
 import androidx.work.Worker
 import androidx.work.WorkerParameters
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 
 /**
  * @author    yiliyang
@@ -13,8 +15,8 @@ import androidx.work.WorkerParameters
  * @since     1.0
  */
 @HiltWorker
-class ExampleWorker(
-    context: Context, workerParams: WorkerParameters
+class ExampleWorker @AssistedInject constructor(
+    @Assisted context: Context, @Assisted workerParams: WorkerParameters
 ) : Worker(context, workerParams) {
     override fun doWork(): Result {
         println("doWork")

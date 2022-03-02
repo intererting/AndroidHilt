@@ -15,8 +15,8 @@ import dagger.hilt.android.components.ViewWithFragmentComponent
  * @since     1.0
  *
  *
-Component	Default Bindings
-SingletonComponent	Application2
+Component           Default         Bindings
+SingletonComponent	Application
 ActivityRetainedComponent	Application
 ViewModelComponent	SavedStateHandle
 ActivityComponent	Application, Activity
@@ -33,8 +33,8 @@ object ViewFragmentModule {
     @Provides
     //这里的Fragment和View是默认的，见注释，但是不能用具体的类型
     fun provideModelInViewWithFragment(fragment: Fragment, view: View): ModelInViewWithFragment {
-//        println("default fragment ${fragment.hashCode()}")
-//        println("default view ${view.hashCode()}")
+        println("default fragment ${fragment.hashCode()}")
+        println("default view ${view.hashCode()}")
         return ModelInViewWithFragment()
     }
 }

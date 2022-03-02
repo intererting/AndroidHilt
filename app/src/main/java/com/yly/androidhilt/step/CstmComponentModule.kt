@@ -20,8 +20,10 @@ class CstmComponentModule @Inject constructor(
 ) {
 
     fun getModel(): ChildModel {
-        val cstmComponent: CstmComponent = componentBuilder.fooSeedData(CstmComponentModel()).build()
-        return EntryPoints.get(cstmComponent, CstmComponentEntryPoint::class.java).provideChildModel()
+        val cstmComponent: CstmComponent =
+            componentBuilder.fooSeedData(CstmComponentModel()).build()
+        return EntryPoints.get(cstmComponent, CstmComponentEntryPoint::class.java)
+            .provideChildModel()
     }
 }
 

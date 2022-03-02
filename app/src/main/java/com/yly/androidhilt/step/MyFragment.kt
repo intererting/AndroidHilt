@@ -19,6 +19,6 @@ class MyFragment : Fragment(R.layout.step_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        myView.modelInViewWithFragment.test()
+//        myView.modelInViewWithFragment.test()
     }
 }

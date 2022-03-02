@@ -7,6 +7,7 @@ import com.yly.androidhilt.R
 import com.yly.androidhilt.step.model.CstmComponentModel
 import com.yly.androidhilt.step.model.EntryPointModel
 import com.yly.androidhilt.step.model.NestedModel
+import com.yly.androidhilt.step.model.ParentModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_step.*
 import javax.inject.Inject
@@ -29,6 +30,7 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 //    @Inject
 //    lateinit var childModel: ParentModel
 
+    //component不对
 //    @Inject
 //    lateinit var modelInView: ModelInView
 
@@ -38,14 +40,18 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportFragmentManager.beginTransaction().add(R.id.stepFragment, MyFragment()).commit()
+
 //        myView.modelInView.test()
+
+//        modelInView.test()
+
 //        childModel.test()
 
 //        nestedModel.test()
 
 //        EntryPointModel().getModel(this)
 
-//        cstmComponentModule.getModel().test()
+        cstmComponentModule.getModel().test()
 
         save.setOnClickListener {
             myViewModel.save()
