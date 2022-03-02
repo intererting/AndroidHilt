@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 //        println(boyPeople.name)
 
         //测试接口注入
-        myInterface.testInterfaceBinds()
+//        myInterface.testInterfaceBinds()
 
         //默认不是单例
 //        println(people)
@@ -69,11 +69,11 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_container_b, MyFragment())
             .commit()
 
-        println("viewmodelComponentViewModel  ${viewmodelComponentViewModel.viewModelPeople.name}")
+//        println("viewmodelComponentViewModel  ${viewmodelComponentViewModel.viewModelPeople.name}")
 
 //        println("myViewModel.people   ${myViewModel.people.name}")
 
-        println("singleTonValue   ${singleTonValue.value}")
+//        println("singleTonValue   ${singleTonValue.value}")
 
         //测试自定义EntryPoint
         val entryPointModel =

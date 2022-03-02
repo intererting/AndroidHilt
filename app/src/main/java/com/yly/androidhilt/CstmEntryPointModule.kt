@@ -1,10 +1,12 @@
 package com.yly.androidhilt
 
+import android.app.Application
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
 //@Module
+//ApplicationComponent已废除
 //@InstallIn(ApplicationComponent::class)
 //object CstmEntryPointModule {
 //

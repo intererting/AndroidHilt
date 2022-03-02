@@ -14,7 +14,6 @@ import dagger.hilt.android.components.ActivityComponent
 @Module
 @InstallIn(ActivityComponent::class)
 abstract class InterfaceBindsModule {
-
     /**
      * @Binds实现接口绑定
      */

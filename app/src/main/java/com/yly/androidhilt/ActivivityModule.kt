@@ -18,7 +18,7 @@ import javax.inject.Singleton
 object ActivivityModule {
 
     @Provides
-    //声明ActivityScoped可以让生成的为单例
+    //声明ActivityScoped可以让生成的为Activity范围的单例
     @ActivityScoped
     fun providePeople(): People {
 
