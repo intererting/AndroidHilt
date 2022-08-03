@@ -40,6 +40,7 @@ object MultiBindingMapModule {
     @MyMapNameKey(MapKeys.NAME)
     fun provide3rdString(): String {
         return "xianren"
+
     }
 
     /**
