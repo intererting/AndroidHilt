@@ -42,6 +42,11 @@ object MultiBindingMapModule {
         return "xianren"
     }
 
+    /**
+     * Provider  每次都返回一个新的实例
+     * lazy 只有调用get才计算，然后保存
+     * normal 实例化的时候就注入，只有一个实例
+     */
     @Provides
     @IntoMap
     @StringKey("age")
