@@ -4,12 +4,12 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.yly.androidhilt.R
+import com.yly.androidhilt.databinding.ActivityStepBinding
 import com.yly.androidhilt.step.model.CstmComponentModel
 import com.yly.androidhilt.step.model.EntryPointModel
 import com.yly.androidhilt.step.model.NestedModel
 import com.yly.androidhilt.step.model.ParentModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_step.*
 import javax.inject.Inject
 
 /**
@@ -20,6 +20,8 @@ import javax.inject.Inject
  */
 @AndroidEntryPoint
 class StepActivity : AppCompatActivity(R.layout.activity_step) {
+
+    private lateinit var myBinding: ActivityStepBinding
 
     private val myViewModel by viewModels<MyViewModel>()
 
@@ -39,6 +41,8 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        myBinding = ActivityStepBinding.inflate(layoutInflater)
+        setContentView(myBinding.root)
         supportFragmentManager.beginTransaction().add(R.id.stepFragment, MyFragment()).commit()
 
 //        myView.modelInView.test()
@@ -53,10 +57,10 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 
         cstmComponentModule.getModel().test()
 
-        save.setOnClickListener {
+        myBinding.save.setOnClickListener {
             myViewModel.save()
         }
-        get.setOnClickListener {
+        myBinding.get.setOnClickListener {
             myViewModel.get()
         }
     }

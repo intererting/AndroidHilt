@@ -4,13 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.yly.androidhilt.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.EntryPointAccessors
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var myBinding: ActivityMainBinding
 
     @Inject
     lateinit var people: People
@@ -45,9 +47,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        myBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(myBinding.root)
 
-        startSecond.setOnClickListener {
+        myBinding.startSecond.setOnClickListener {
             startActivity(Intent(this, SecondActivity::class.java))
         }
 //        test.text = people.name

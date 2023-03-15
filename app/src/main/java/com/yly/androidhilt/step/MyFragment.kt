@@ -5,7 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.yly.androidhilt.R
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.step_fragment.*
 import javax.inject.Inject
 
 /**
