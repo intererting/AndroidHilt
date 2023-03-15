@@ -14,7 +14,7 @@ import javax.inject.Inject
  * @version   1.0
  * @since     1.0
  */
-class EntryPointModel {
+object EntryPointModel {
 
     fun getModel(context: Activity) {
         EntryPoints.get(context, MyEntryPoint::class.java).provideChildModel().test()

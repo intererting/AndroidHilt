@@ -2,11 +2,13 @@ package com.yly.androidhilt.step
 
 import com.yly.androidhilt.step.model.ChildModel
 import com.yly.androidhilt.step.model.CstmComponentModel
+import com.yly.androidhilt.step.model.ReturnModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.EntryPoint
 import dagger.hilt.EntryPoints
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
 import javax.inject.Inject
 
 /**
@@ -34,3 +36,30 @@ interface CstmComponentEntryPoint {
     fun provideChildModel(): ChildModel
 
 }
+
+@Module
+@InstallIn(CstmComponent::class)
+object MyCstmComponentModule {
+
+    @Provides
+    fun provideReturnModel(cstmComponentModel: CstmComponentModel): ReturnModel {
+        return ReturnModel(cstmComponentModel.name)
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

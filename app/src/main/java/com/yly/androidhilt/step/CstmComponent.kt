@@ -1,6 +1,7 @@
 package com.yly.androidhilt.step
 
 import dagger.hilt.DefineComponent
+import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 
 /**
@@ -9,6 +10,5 @@ import dagger.hilt.components.SingletonComponent
  * @version   1.0
  * @since     1.0
  */
-@DefineComponent(parent = SingletonComponent::class)
-interface CstmComponent {
-}
+@DefineComponent(parent = ActivityComponent::class)
+interface CstmComponent {}

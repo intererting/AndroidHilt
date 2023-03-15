@@ -5,10 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.yly.androidhilt.R
 import com.yly.androidhilt.databinding.ActivityStepBinding
-import com.yly.androidhilt.step.model.CstmComponentModel
-import com.yly.androidhilt.step.model.EntryPointModel
-import com.yly.androidhilt.step.model.NestedModel
-import com.yly.androidhilt.step.model.ParentModel
+import com.yly.androidhilt.step.model.*
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -25,19 +22,22 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 
     private val myViewModel by viewModels<MyViewModel>()
 
-    @Inject
-    lateinit var nestedModel: NestedModel
+//    @Inject
+//    lateinit var nestedModel: NestedModel
 
-    //Hilt不支持继承，只能用具体类型
+    //Hilt不支持多态，只能用具体类型
 //    @Inject
 //    lateinit var childModel: ParentModel
+
+//    @Inject
+//    lateinit var childModel: ChildModel
 
     //component不对
 //    @Inject
 //    lateinit var modelInView: ModelInView
 
-    @Inject
-    lateinit var cstmComponentModule: CstmComponentModule
+//    @Inject
+//    lateinit var cstmComponentModule: CstmComponentModule
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,9 +53,9 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 
 //        nestedModel.test()
 
-//        EntryPointModel().getModel(this)
+//        EntryPointModel.getModel(this)
 
-        cstmComponentModule.getModel().test()
+//        cstmComponentModule.getModel().test()
 
         myBinding.save.setOnClickListener {
             myViewModel.save()

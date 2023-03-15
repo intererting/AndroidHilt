@@ -1,5 +1,6 @@
 package com.yly.androidhilt.step.model
 
+import com.yly.androidhilt.step.MyQualifier
 import javax.inject.Inject
 
 /**
@@ -9,7 +10,12 @@ import javax.inject.Inject
  * @since     1.0
  */
 class ChildModel @Inject constructor() : ParentModel() {
+
+    @Inject
+    @MyQualifier
+    lateinit var nameChild: OtherModel
+
     fun test() {
-        println("childModel")
+//        println("childModel $nameChild $name")
     }
 }
