@@ -8,8 +8,6 @@ import dagger.hilt.android.components.ActivityComponent
 
 @Module
 @InstallIn(ActivityComponent::class)
-//@Singleton只能配合ApplicationComponent使用
-//@InstallIn(ApplicationComponent::class)
 object SingleTonModule {
 
     /**

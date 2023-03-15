@@ -14,12 +14,13 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class SecondActivity : AppCompatActivity() {
 
+    //不同的Activity就不是同一个对象
     @Inject
     internal lateinit var people: People
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-//        println(people)
+        println(people)
     }
 }

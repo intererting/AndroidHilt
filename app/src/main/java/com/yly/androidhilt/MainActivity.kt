@@ -19,11 +19,13 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var peopleB: People
+/*
 
     //带标示符的注入
-//    @Inject
-//    @BoyQualifier
-//    internal lateinit var boyPeople: People
+    @Inject
+    @BoyQualifier
+    internal lateinit var boyPeople: People
+*/
 
     @Inject
     lateinit var singleTonValue: SingleTonValue
@@ -55,21 +57,26 @@ class MainActivity : AppCompatActivity() {
         }
 //        test.text = people.name
 
-//        println(boyPeople.name)
+/*
+
+        //带qualifier
+        println(boyPeople.name)
+*/
 
         //测试接口注入
-//        myInterface.testInterfaceBinds()
+        myInterface.testInterfaceBinds()
+
+/*
 
         //默认不是单例
-//        println(people)
+        println(people)
         println("people === peopleB   ${people === peopleB}")
+*/
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, MyFragment())
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container, MyFragment())
             .commit()
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container_b, MyFragment())
+        supportFragmentManager.beginTransaction().add(R.id.fragment_container_b, MyFragment())
             .commit()
 
 //        println("viewmodelComponentViewModel  ${viewmodelComponentViewModel.viewModelPeople.name}")
@@ -79,11 +86,17 @@ class MainActivity : AppCompatActivity() {
 //        println("singleTonValue   ${singleTonValue.value}")
 
         //测试自定义EntryPoint
-        val entryPointModel =
+        val entryPointModel1 =
             EntryPointAccessors.fromApplication(applicationContext, EntryPointInterface::class.java)
                 .getEntryPoint()
 
-        println("entryPointModel.value   ${entryPointModel.value}")
+        val entryPointModel2 =
+            EntryPointAccessors.fromApplication(applicationContext, EntryPointInterface::class.java)
+                .getEntryPoint()
+/*
+        println("entryPointModel1 $entryPointModel1")
+        println("entryPointModel2 $entryPointModel2")
+    */
     }
 
     override fun onDestroy() {

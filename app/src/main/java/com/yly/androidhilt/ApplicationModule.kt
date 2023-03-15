@@ -1,5 +1,10 @@
 package com.yly.androidhilt
 
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+
 /*ApplicationComponent	Application
 ActivityRetainedComponent	ViewModel (see View model extension)
 ViewModelComponent ViewModel
@@ -21,13 +26,15 @@ ViewWithFragmentComponent	@ViewScoped	View#super()	View destroyed
 ServiceComponent	@ServiceScoped	Service#onCreate()	Service#onDestroy()
 */
 
+/*
 
-//@Module
-//@InstallIn(SingletonComponent::class) // Installs FooModule in the generate ApplicationComponent.
-//object ApplicationModule {
-//
-//    @Provides
-//    fun providePeople(): People {
-//        return People().apply { name = "provide by module" }
-//    }
-//}
+@Module
+@InstallIn(SingletonComponent::class) // Installs FooModule in the generate ApplicationComponent.
+object ApplicationModule {
+
+    @Provides
+    fun providePeople(): People {
+        return People().apply { name = "provide by module" }
+    }
+}
+*/

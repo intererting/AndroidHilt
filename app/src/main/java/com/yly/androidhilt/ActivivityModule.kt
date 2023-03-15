@@ -16,7 +16,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ActivityComponent::class)
 object ActivivityModule {
-
     @Provides
     //声明ActivityScoped可以让生成的为Activity范围的单例
     @ActivityScoped
@@ -26,22 +25,24 @@ object ActivivityModule {
             name = "provide by activity moduld"
         }
     }
+/*
+    @Provides
+    @BoyQualifier
+    fun provideBoyPeople(): People {
 
-//    @Provides
-//    @BoyQualifier
-//    fun provideBoyPeople(): People {
-//
-//        return People().apply {
-//            name = "boy people provide by activity moduld"
-//        }
-//    }
-//
-//    @Provides
-//    @GirlQualifier
-//    fun provideGirlPeople(): People {
-//
-//        return People().apply {
-//            name = "girl people provide by activity moduld"
-//        }
-//    }
+        return People().apply {
+            name = "boy people provide by activity moduld"
+        }
+    }
+
+
+    @Provides
+    @GirlQualifier
+    fun provideGirlPeople(): People {
+
+        return People().apply {
+            name = "girl people provide by activity moduld"
+        }
+    }
+  */
 }
