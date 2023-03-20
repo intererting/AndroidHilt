@@ -1,6 +1,7 @@
 package com.yly.androidhilt.step.module
 
 import com.yly.androidhilt.step.MyQualifier
+import com.yly.androidhilt.step.model.ChildModel
 import com.yly.androidhilt.step.model.OtherModel
 import dagger.Module
 import dagger.Provides
@@ -23,4 +24,9 @@ object MyActivityModel {
     fun provideName(): OtherModel {
         return OtherModel()
     }
+
+//    @Provides
+//    fun provideChildModel(): ChildModel {
+//        return ChildModel()
+//    }
 }

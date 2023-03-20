@@ -10,6 +10,7 @@ import dagger.hilt.EntryPoints
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * @author    yiliyang
@@ -36,21 +37,6 @@ interface CstmComponentEntryPoint {
     fun provideChildModel(): ChildModel
 
 }
-
-@Module
-@InstallIn(CstmComponent::class)
-object MyCstmComponentModule {
-
-    @Provides
-    fun provideReturnModel(cstmComponentModel: CstmComponentModel): ReturnModel {
-        return ReturnModel(cstmComponentModel.name)
-    }
-
-}
-
-
-
-
 
 
 

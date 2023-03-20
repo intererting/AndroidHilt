@@ -1,6 +1,7 @@
 package com.yly.androidhilt.step.module
 
 import com.yly.androidhilt.step.ModelInView
+import com.yly.androidhilt.step.model.ChildModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,4 +22,9 @@ object ViewModule {
     fun provideModelInView(): ModelInView {
         return ModelInView()
     }
+
+//    @Provides
+//    fun provideChildModel(): ChildModel {
+//        return ChildModel()
+//    }
 }

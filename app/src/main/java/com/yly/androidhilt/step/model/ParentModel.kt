@@ -11,7 +11,7 @@ import javax.inject.Inject
  */
 open class ParentModel {
 
-    @Inject
-    @MyQualifier
-    lateinit var name: OtherModel
+//    @Inject
+//    @MyQualifier
+//    lateinit var name: OtherModel
 }

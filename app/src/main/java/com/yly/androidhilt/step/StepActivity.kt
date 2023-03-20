@@ -36,14 +36,20 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 //    @Inject
 //    lateinit var modelInView: ModelInView
 
-//    @Inject
-//    lateinit var cstmComponentModule: CstmComponentModule
+    @Inject
+    lateinit var returnModel: ReturnModel
+
+    @Inject
+    lateinit var cstmComponentModule1: CstmComponentModule
+
+    @Inject
+    lateinit var cstmComponentModule2: CstmComponentModule
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         myBinding = ActivityStepBinding.inflate(layoutInflater)
         setContentView(myBinding.root)
-        supportFragmentManager.beginTransaction().add(R.id.stepFragment, MyFragment()).commit()
+//        supportFragmentManager.beginTransaction().add(R.id.stepFragment, MyFragment()).commit()
 
 //        myView.modelInView.test()
 
@@ -55,7 +61,11 @@ class StepActivity : AppCompatActivity(R.layout.activity_step) {
 
 //        EntryPointModel.getModel(this)
 
-//        cstmComponentModule.getModel().test()
+        cstmComponentModule1.getModel().test()
+
+        cstmComponentModule2.getModel().test()
+
+        println(returnModel.name)
 
         myBinding.save.setOnClickListener {
             myViewModel.save()

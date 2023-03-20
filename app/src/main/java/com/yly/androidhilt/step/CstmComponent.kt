@@ -10,5 +10,5 @@ import dagger.hilt.components.SingletonComponent
  * @version   1.0
  * @since     1.0
  */
-@DefineComponent(parent = ActivityComponent::class)
+@DefineComponent(parent = SingletonComponent::class)
 interface CstmComponent {}
